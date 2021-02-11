@@ -28,6 +28,8 @@ import (
 // HardFail determines whether the failure to check the revocation
 // status of a certificate (i.e. due to network failure) causes
 // verification to fail (a hard failure).
+// status of a certificate (i.e. due to network failure) causes
+// verification to fail (a hard failure).
 var HardFail = false
 
 // CRLSet associates a PKIX certificate list with the URL the CRL is

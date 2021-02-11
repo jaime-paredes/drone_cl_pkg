@@ -38,7 +38,7 @@ func main() {
 	defer resp.Body.Close()
 	body, err := ioutil.ReadAll(resp.Body)
 
-	var companies []models.Company
+	var companies []models.Companies
 	if err = json.Unmarshal(body, &companies); err != nil {
 		fmt.Println(err)
 	}

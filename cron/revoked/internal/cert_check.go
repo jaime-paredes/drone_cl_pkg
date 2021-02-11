@@ -57,14 +57,14 @@ func CertCheck(companies []models.Companies) {
 
 			revoked, result, err := pkg.RevCheck(cert)
 			if err != nil {
-				fmt.Println("Error checking revocation certificate")
+				fmt.Println("Error checking certificate revocation")
 				return
 			}
 			// mongoResp := apicall.APICall(request apicall.Request)
 			if !revoked && result {
-				fmt.Println("Certificate ok")
+				fmt.Println("Certificate Ok")
 			} else if revoked && !result {
-				fmt.Println("error checking revocation")
+				fmt.Println("Error checking certificate revocation")
 			} else if revoked && result {
 				mongoURL := fmt.Sprintf("%s/v1/companies/%d/certificate.json", trackingAPI, comp.CpnID)
 				body, _ = json.Marshal(Data{Revoked: true})
